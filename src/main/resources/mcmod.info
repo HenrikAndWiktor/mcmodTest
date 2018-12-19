@@ -1,0 +1,16 @@
+[
+{
+  "modid": "test",
+  "name": "Test Mod",
+  "description": "Test mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "http://github.com/YellowDuckSE/mcmodTest/releases/latest",
+  "authorList": ["Wiktor Eriksson","Yellow Duck team"],
+  "credits": "The Forge and FML guys, for making an example and guide for me to use.",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

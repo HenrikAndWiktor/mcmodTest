@@ -1,0 +1,10 @@
+{
+  "homepage": "http://wiktoreriksson.se/modding/1.12.2/Test/",
+  "1.12.2": {
+    "0.1.0": "WGameYT (Wiktor Eriksson): Initial beta version"
+  },
+  "promos": {
+    "1.12.2-latest": "0.1.0",
+    "1.12.2-recommended": "0.1.0"
+  }
+}
