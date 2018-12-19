@@ -1,6 +1,6 @@
 # EXAMPLE CODE FOR MODDING
 
-#### Example for creating a Block
+#### Example for creating a Block in 1.12.2
 #### More coming soon
 
 ### -------------------------------------------
