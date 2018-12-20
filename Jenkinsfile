@@ -9,10 +9,10 @@ node {
             checkout scm
         }
         stage ('preparations') {
-            bat "D:\\Programs\\gradle\\gradle-5.0\\bin\\gradle.bat setupCiWorkspace --stacktrace"
+            bat "D:\\Programs\\gradle\\gradle-3.0\\bin\\gradle.bat setupCiWorkspace --stacktrace"
         }
         stage('Build') {
-            bat "D:\\Programs\\gradle\\gradle-5.0\\bin\\gradle.bat build --stacktrace-"
+            bat "D:\\Programs\\gradle\\gradle-3.0\\bin\\gradle.bat build --stacktrace"
         }
         stage ('Tests') {
         }
