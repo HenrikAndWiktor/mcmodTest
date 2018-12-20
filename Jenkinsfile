@@ -1,3 +1,4 @@
+// This Jenkinsfile runs on our Windows 10 Jenkins server
 node {
 
     // Clean workspace before doing anything
@@ -8,10 +9,10 @@ node {
             checkout scm
         }
         stage ('preparations') {
-            bat "gradle setupCiWorkspace"
+            bat "D:\\Programs\\gradle\\gradle-5.0\\bin\\gradle.exe setupCiWorkspace"
         }
         stage('Build') {
-            bat "gradle build"
+            bat "D:\\Programs\\gradle\\gradle-5.0\\bin\\gradle.exe build"
         }
         stage ('Tests') {
         }
