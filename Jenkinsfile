@@ -1,6 +1,6 @@
-// This Jenkinsfile runs on our Windows 10 Jenkins server
 node {
-
+    def gradlehome // NOT BIN DIR
+    gradlehome="D:\\Programs\\gradle\\gradle-3.0\\" //Add \ or / (depends on OS) to gradlehome
     // Clean workspace before doing anything
     deleteDir()
 
@@ -9,10 +9,22 @@ node {
             checkout scm
         }
         stage ('preparations') {
-            bat "D:\\Programs\\gradle\\gradle-3.0\\bin\\gradle.bat setupCiWorkspace --stacktrace"
+            if (System.properties['os.name'].toLowerCase().contains('windows')) {
+                println "it's Windows"
+                bat gradlehome+"bin\\gradle.bat setupCiWorkspace --stacktrace"
+            } else {
+                println "it's not Windows"
+                sh gradlehome+"bin/gradle setupCiWorkspace --stacktrace"
+            }
         }
         stage('Build') {
-            bat "D:\\Programs\\gradle\\gradle-3.0\\bin\\gradle.bat build --stacktrace"
+            if (System.properties['os.name'].toLowerCase().contains('windows')) {
+                println "it's Windows"
+                bat gradlehome+"bin\\gradle.bat build --stacktrace"
+            } else {
+                println "it's not Windows"
+                sh gradlehome+"bin/gradle build --stacktrace"
+            }
         }
         stage ('Tests') {
         }
