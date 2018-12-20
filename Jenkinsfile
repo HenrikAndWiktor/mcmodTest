@@ -8,16 +8,15 @@ node {
             checkout scm
         }
         stage ('preparations') {
-            bat "gradlew.bat setupCiWorkspace"
+            bat "gradle setupCiWorkspace"
         }
         stage('Build') {
-            bat "gradlew.bat build"
+            bat "gradle build"
         }
         stage ('Tests') {
         }
     } catch (err) {
         currentBuild.result = 'FAILED'
-        notifyFailed()
         throw err
     }
 }
