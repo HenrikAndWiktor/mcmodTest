@@ -17,7 +17,7 @@ node {
         stage ('Tests') {
         }
         stage ('Post') {
-            archiveArtifacts allowEmptyArchive: true, artifacts: 'build/libs/*.jar', excludes: '*-sources.jar', fingerprint: true, onlyIfSuccessful: true
+            archiveArtifacts allowEmptyArchive: true, artifacts: 'build/libs/*.jar', excludes: 'build/libs/*-sources.jar', fingerprint: true, onlyIfSuccessful: true
         }
     } catch (err) {
         currentBuild.result = 'FAILED'
