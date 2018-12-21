@@ -19,7 +19,14 @@ node {
     // Clean workspace before doing anything
     deleteDir()
     checkout scm
-    result = sh (script: "git log -1 | grep '[jenkins]'", returnStatus: true)
+    def result
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        println "it's Windows"
+        result = bat (script: "git.exe log -1 | grep '[jenkins]'", returnStatus: true)
+    } else {
+        println "it's not Windows"
+        result = sh (script: "git log -1 | grep '[jenkins]'", returnStatus: true)
+    }
     if (result == 0) {
         echo "performing build..."
         try {
