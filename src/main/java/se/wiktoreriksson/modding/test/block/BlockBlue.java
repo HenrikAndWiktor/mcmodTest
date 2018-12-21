@@ -30,11 +30,11 @@ public class BlockBlue extends Block {
     private static BlockBlue blockblueObj=null;
     public BlockBlue() {
         super(Material.ROCK);
-        setLightLevel(15/16f)
-                .setCreativeTab(CreativeTabs.MISC)
-                .setBlockUnbreakable()
-                .setRegistryName("test:blue_block")
-                .setUnlocalizedName("blue");
+        setLightLevel(15/16f);
+        setCreativeTab(CreativeTabs.MISC);
+        setBlockUnbreakable();
+        setRegistryName("test:blue_block");
+        setUnlocalizedName("blue");
     }
 
     /**
