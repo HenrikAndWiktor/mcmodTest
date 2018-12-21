@@ -22,7 +22,7 @@ node {
     def result
     if (System.properties['os.name'].toLowerCase().contains('windows')) {
         println "it's Windows"
-        result = bat (script: "git.exe log -1 | grep '[jenkins]'", returnStatus: true)
+        result = bat (script: "git.exe log -1 | find '[jenkins]'", returnStatus: true)
     } else {
         println "it's not Windows"
         result = sh (script: "git log -1 | grep '[jenkins]'", returnStatus: true)
