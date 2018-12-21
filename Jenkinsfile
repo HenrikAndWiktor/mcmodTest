@@ -19,7 +19,6 @@ node {
     // Clean workspace before doing anything
     deleteDir()
     checkout scm
-    //Dummy change for commit test
     def result
     if (System.properties['os.name'].toLowerCase().contains('windows')) {
         println "it's Windows"
